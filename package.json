@@ -1,0 +1,37 @@
+{
+  "name": "ecss",
+  "version": "1.0.0",
+  "description": "English CSS",
+  "main": "./src/js/ecss.js",
+  "bin": {
+    "ecss": "./src/js/ecss.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "refresh": "tsc && rm -rf ./node_modules ./package-lock.json && npm i -g && npm i --save-dev @types/node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rakshitranga/ecss.git"
+  },
+  "author": "rakshitranga",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rakshitranga/ecss/issues"
+  },
+  "homepage": "https://github.com/rakshitranga/ecss#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "clear": "^0.1.0",
+    "commander": "^7.0.0",
+    "figlet": "^1.5.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.25",
+    "@types/yargs": "^16.0.0",
+    "ts-node": "^9.1.1"
+  }
+}
