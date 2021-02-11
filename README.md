@@ -1,5 +1,5 @@
 # ECSS
-ECSS is an english implimentation of CSS written in Javascript.
+ECSS is an english implementation of CSS written in Javascript.
 
 Installation
 
@@ -38,10 +38,6 @@ button{background-color:blue;outline:none;}h3{text-align:center;}
 - Variables
 - Mixins
 - Parse to a file
-
----
-### Helpers
-[Sameera Murthy](https://github.com/sameeramurthy)
 
 ---
 ### License
