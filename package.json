@@ -10,7 +10,8 @@
     "test": "test"
   },
   "scripts": {
-    "refresh": "tsc && rm -rf ./node_modules ./package-lock.json && npm i -g && npm i --save-dev @types/node"
+    "refresh": "tsc && rm -rf ./node_modules ./package-lock.json && npm i -g --force && npm i --save-dev @types/node",
+    "start": "tsc && ecss.cmd ./test/style.ecss"
   },
   "repository": {
     "type": "git",

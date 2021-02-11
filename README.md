@@ -8,7 +8,7 @@ npm install ecss-lang -g
 ```
 
 ---
-### Syntax
+### Basic Syntax
 To select a tag, use the for keyword.
 ```
 for button
@@ -34,10 +34,26 @@ button{background-color:blue;outline:none;}h3{text-align:center;}
 ```
 
 ---
+### Variables
+
+To make a variable, use:
+```
+variable main color is orange
+```
+
+To use a variable, surround it with parenthesis:
+```
+variable main color is orange
+
+for .navbar
+    background color is (main color)
+```
+
+---
 ### Soon to Come
-- Variables
 - Mixins
 - Parse to a file
+- More
 
 ---
 ### License

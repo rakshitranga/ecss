@@ -1,22 +1,35 @@
 import { chunk, containsWord } from "./functions";
+import { createVariable, checkVariable } from "./variables";
 
 function parseEcss(ecss: string) {
-    let style = "";
+    let style: string = "";
 
-    let arr = ecss.split("\n");
+    let arr: string[] = ecss.split("\n");
 
-    let selectors = [];
-    let declarations = {};
+    let selectors: string[] = [];
+    let vars: object = {};
+    let declarations: object = {};
 
     for (let i = 0; i < arr.length; i++) {
-        if (containsWord(arr[i], "for")) {
-            let selector = arr[i].split("for")[1].trim();
+        if (containsWord(arr[i], "variable")) {
+            createVariable(vars, arr[i]);
+            console.log(vars)
+        } else if (containsWord(arr[i], "for")) {
+            let selector: string = arr[i].split("for")[1].trim();
             selectors.push(selector);
             declarations[selector] = [];
         } else if (containsWord(arr[i], "is")) {
-            let prop = arr[i].split("is")[0].trim().split(" ").join("-");
-            let val = arr[i].split("is")[1].trim();
-            let currentSelector = selectors[selectors.length - 1];
+            let prop: string = arr[i].split("is")[0].trim().split(" ").join("-");
+            let initialVal: string = arr[i].split("is")[1].trim();
+            let val: string = "";
+            if (initialVal.startsWith("(") && initialVal.endsWith(")")) {
+                initialVal = initialVal.replace("(", "").replace(")", "").split(" ").join("-");
+                val = checkVariable(vars, initialVal) ? vars[initialVal] : initialVal;
+            } else {
+                val = initialVal;
+            }
+
+            let currentSelector: string = selectors[selectors.length - 1];
 
             val += ";";
 
@@ -38,4 +51,4 @@ function parseEcss(ecss: string) {
     return style;
 }
 
-export {parseEcss};
+export { parseEcss };

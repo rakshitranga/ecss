@@ -1,2 +1,5 @@
+variable main color is blue
+
 for h1
     color is blue
+    background color is (main color)
