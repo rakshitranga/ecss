@@ -4,8 +4,8 @@ ECSS is an english implementation of CSS written in Javascript.
 ---
 ### Installation
 
-```
-npm install ecss-lang -g
+```shell
+$ npm install ecss-lang -g
 ```
 
 ---
@@ -26,8 +26,8 @@ for h3
     text align is center
 ```
 Once you're done, run this command:
-```
-ecss path/to/file.ecss
+```shell
+$ ecss path/to/file.ecss
 ```
 The parsed ECSS should output in the console.
 ```
