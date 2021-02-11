@@ -1,7 +1,8 @@
 # ECSS
 ECSS is an english implementation of CSS written in Javascript.
 
-Installation
+---
+### Installation
 
 ```
 npm install ecss-lang -g
