@@ -1,6 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.checkVariable = exports.createVariable = void 0;
 function createVariable(vars, line) {
     line = line.split("is");
     var halfOne = line[0].trim().split(" ");
