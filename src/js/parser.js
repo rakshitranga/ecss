@@ -12,7 +12,6 @@ function parseEcss(ecss) {
     for (var i = 0; i < arr.length; i++) {
         if (functions_1.containsWord(arr[i], "variable")) {
             variables_1.createVariable(vars, arr[i]);
-            console.log(vars);
         }
         else if (functions_1.containsWord(arr[i], "for")) {
             var selector = arr[i].split("for")[1].trim();

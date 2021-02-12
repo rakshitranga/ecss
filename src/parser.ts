@@ -13,7 +13,6 @@ function parseEcss(ecss: string) {
     for (let i = 0; i < arr.length; i++) {
         if (containsWord(arr[i], "variable")) {
             createVariable(vars, arr[i]);
-            console.log(vars)
         } else if (containsWord(arr[i], "for")) {
             let selector: string = arr[i].split("for")[1].trim();
             selectors.push(selector);
