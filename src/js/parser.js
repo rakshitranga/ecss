@@ -1,6 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.parseEcss = void 0;
 var functions_1 = require("./functions");
 var variables_1 = require("./variables");
 function parseEcss(ecss) {
