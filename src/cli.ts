@@ -17,6 +17,22 @@ function cliActions(program) {
             }
             fs.writeFileSync(outDir + program.parse.split("/").pop().replace(".ecss", ".css"), parseEcss(data));
         });
+    } else if (program.watch) {
+        console.log(" Watching for changes... ")
+
+        fs.watch(program.watch, 'utf-8', (e, filename) => {
+            if (e == "change") {
+                fs.readFile(program.watch, "utf-8", (err, data) => {
+                    if (!fs.existsSync(outDir)) {
+                        fs.mkdirSync(outDir);
+                    }
+                    try {
+                        fs.writeFileSync(outDir + program.watch.split("/").pop().replace(".ecss", ".css"), parseEcss(data));
+                    } catch(e) {;}
+                    // fs.writeFileSync(outDir + program.watch.split("/").pop().replace(".ecss", ".css"), parseEcss(data));
+                })
+            }
+        })
     }
 
 

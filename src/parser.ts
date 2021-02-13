@@ -11,7 +11,16 @@ function parseEcss(ecss: string) {
     let declarations: object = {};
 
     for (let i = 0; i < arr.length; i++) {
-        if (containsWord(arr[i], "variable")) {
+        if (containsWord(arr[i], "extend")) {
+            let currentSelector: string = selectors[selectors.length - 1];
+            let line = arr[i].trim().split(" ");
+            let selector = line[1];
+            chunk(declarations[selector], 2).forEach(sm => {
+                sm.forEach(item => {
+                    declarations[currentSelector].push(item);
+                })
+            })
+        } else if (containsWord(arr[i], "variable")) {
             createVariable(vars, arr[i]);
         } else if (containsWord(arr[i], "for")) {
             let selector: string = arr[i].split("for")[1].trim();

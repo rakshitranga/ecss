@@ -9,8 +9,18 @@ function parseEcss(ecss) {
     var selectors = [];
     var vars = {};
     var declarations = {};
-    for (var i = 0; i < arr.length; i++) {
-        if (functions_1.containsWord(arr[i], "variable")) {
+    var _loop_1 = function (i) {
+        if (functions_1.containsWord(arr[i], "extend")) {
+            var currentSelector_1 = selectors[selectors.length - 1];
+            var line = arr[i].trim().split(" ");
+            var selector = line[1];
+            functions_1.chunk(declarations[selector], 2).forEach(function (sm) {
+                sm.forEach(function (item) {
+                    declarations[currentSelector_1].push(item);
+                });
+            });
+        }
+        else if (functions_1.containsWord(arr[i], "variable")) {
             variables_1.createVariable(vars, arr[i]);
         }
         else if (functions_1.containsWord(arr[i], "for")) {
@@ -34,6 +44,9 @@ function parseEcss(ecss) {
             declarations[currentSelector].push(prop);
             declarations[currentSelector].push(val);
         }
+    };
+    for (var i = 0; i < arr.length; i++) {
+        _loop_1(i);
     }
     for (var selector in declarations) {
         style += selector + "{";

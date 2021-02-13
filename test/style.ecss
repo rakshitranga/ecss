@@ -1,5 +1,11 @@
-variable main color is dodgerblue
+variable blue is #1e90ff
 
-for h1
-    color is black
-    background color is (main color)
+for h4
+    color is blue
+
+for button
+    color is (blue)
+
+for h3
+    extend button   
+    background color is pink 

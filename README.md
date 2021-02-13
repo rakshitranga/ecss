@@ -66,6 +66,18 @@ for .navbar
 ```
 
 ---
+### Extend
+
+To extend the styles from another selector, use:
+```
+for h1
+    font style is cursive
+
+for p 
+    extend h1
+```
+
+---
 ### Soon to Come
 - Mixins
 - Parse to a file
