@@ -1,5 +1,5 @@
-variable main color is orange
+variable main color is dodgerblue
 
 for h1
-    color is blue
+    color is black
     background color is (main color)

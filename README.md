@@ -27,12 +27,27 @@ for h3
 ```
 Once you're done, run this command:
 ```shell
-$ ecss path/to/file.ecss
+$ ecss -o path/to/file.ecss
 ```
 The parsed ECSS should output in the console.
-```
+```css
 button{background-color:blue;outline:none;}h3{text-align:center;}
 ```
+
+To parse to a file, make a `ecssconfig.json` in your root directory with these contents.
+```json
+{
+    "compilerOptions": {
+        "outDir": "css/"
+    }
+}
+```
+Then, in your console, type
+```shell
+ecss -p path/to/file.ecss
+```
+
+The ecss should output in a css folder.
 
 ---
 ### Variables
