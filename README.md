@@ -78,11 +78,5 @@ for p
 ```
 
 ---
-### Soon to Come
-- Mixins
-- Parse to a file
-- More
-
----
 ### License
 MIT
