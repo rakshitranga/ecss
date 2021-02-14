@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import { parseEcss } from "./parser";
-const { outDir } = require('../../ecssconfig.json').compilerOptions;
+const { outDir } = require('ecssconfig.json').compilerOptions;
 
 function cliActions(program) {
     if (program.output) {
