@@ -11,7 +11,6 @@ function cliActions(program) {
         }
     } else if (program.parse) {
         fs.readFile(program.parse, "utf8", (err, data) => {
-            console.log(parseEcss(data));
             if (!fs.existsSync(outDir)) {
                 fs.mkdirSync(outDir);
             }

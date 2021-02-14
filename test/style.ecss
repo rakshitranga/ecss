@@ -1,10 +1,12 @@
 variable blue is #1e90ff
+variable pink is orange
 
 for h4
     color is blue
 
 for button
-    color is (blue)
+    color is (pink)
+    font family is Arial
 
 for h3
     extend button   
