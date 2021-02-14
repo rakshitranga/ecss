@@ -1,6 +1,5 @@
 import * as fs from "fs";
 import { parseEcss } from "./parser";
-const { outDir } = require('ecssconfig.json').compilerOptions;
 
 function cliActions(program) {
     if (program.output) {
@@ -10,6 +9,8 @@ function cliActions(program) {
             })
         }
     } else if (program.parse) {
+        const { outDir } = require(process.cwd() + '/ecssconfig.json').compilerOptions;
+
         fs.readFile(program.parse, "utf8", (err, data) => {
             if (!fs.existsSync(outDir)) {
                 fs.mkdirSync(outDir);
@@ -18,8 +19,10 @@ function cliActions(program) {
         });
     } else if (program.watch) {
         console.log(" Watching for changes... ")
+        const { outDir } = require(process.cwd() + '/ecssconfig.json').compilerOptions;
 
         fs.watch(program.watch, 'utf-8', (e, filename) => {
+
             if (e == "change") {
                 fs.readFile(program.watch, "utf-8", (err, data) => {
                     if (!fs.existsSync(outDir)) {
