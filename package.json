@@ -1,6 +1,6 @@
 {
   "name": "ecss-lang",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "English CSS",
   "main": "./src/js/ecss.js",
   "bin": {
