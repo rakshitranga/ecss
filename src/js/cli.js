@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.cliActions = void 0;
 var fs = require("fs");
 var parser_1 = require("./parser");
-var outDir = require('../../ecssconfig.json').compilerOptions.outDir;
+var outDir = require('ecssconfig.json').compilerOptions.outDir;
 function cliActions(program) {
     if (program.output) {
         if (fs.existsSync(program.output)) {
